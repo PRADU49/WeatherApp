@@ -26,11 +26,12 @@ btn.addEventListener("click", async () => {
         const weatherJSONData = await weather.json();
 
         const temp = weatherJSONData.current_weather.temperature;
+        const wind = weatherJSONData.current_weather.windspeed;
 
-
-        output.innerHTML = `<p>${city.charAt(0).toUpperCase() + city.slice(1) } Temperature ${temp}°C</p>`;
+        output.innerHTML += `<p>${city.charAt(0).toUpperCase() + city.slice(1)} Temperature ${temp}°C</p>
+        <br> <p>${city.charAt(0).toUpperCase() + city.slice(1)} Wind Speed ${wind}km/h</p> <br>`
 
     } catch (error) {
-
+        
     };
 });
