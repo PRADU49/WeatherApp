@@ -10,6 +10,8 @@ btn.addEventListener("click", async () => {
     const city = document.getElementById('city').value;
 
     try {
+        output.innerHTML = "";
+
         const geoRes = await fetch(
             `https://geocoding-api.open-meteo.com/v1/search?name=${city}`
         );
@@ -28,10 +30,13 @@ btn.addEventListener("click", async () => {
         const temp = weatherJSONData.current_weather.temperature;
         const wind = weatherJSONData.current_weather.windspeed;
 
-        output.innerHTML += `<p>${city.charAt(0).toUpperCase() + city.slice(1)} Temperature ${temp}°C</p>
-        <br> <p>${city.charAt(0).toUpperCase() + city.slice(1)} Wind Speed ${wind}km/h</p> <br>`
+        output.innerHTML += `<p>${city.charAt(0).toUpperCase() + city.slice(1)} Weather Report </p>
+        <br>
+        <p>Temperature ${temp}°C</p>
+        <br>
+        <p>Wind Speed ${wind}km/h</p> <br>`;
 
-    } catch (error) {
-        
+    } catch (err) {
+        output.innerHTML += `<p>Something is wrong pleace try again!</p>`
     };
 });
