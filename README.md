@@ -4,6 +4,10 @@ A simple and responsive Weather Application built using **HTML, CSS, and JavaScr
 
 ---
 
+## Live Demo
+
+https://pradu49.github.io/WeatherApp/
+
 ## 📌 Features
 
 - 🌍 Search weather by city name  
